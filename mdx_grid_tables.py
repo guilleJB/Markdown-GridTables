@@ -62,8 +62,8 @@ class GridTableExtension(markdown.Extension):
                                       GridTableProcessor(md.parser),
                                       '<hashheader')
 
-def makeExtension(configs={}):
-    return GridTableExtension(configs=configs)
+def makeExtension(*args, **kwargs):
+    return GridTableExtension(*args, **kwargs)
 
 class GridTableCell(object):
     """
