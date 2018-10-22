@@ -3,8 +3,8 @@
 from setuptools import setup
 
 setup(
-    name='mdx_grid_tables',
-    version='1.2',
+    name='MarkdownGridTables',
+    version='2.0',
     author='smartboyathome',
     description='Python-Markdown extension to add grid_table support',
     url='https://github.com/smartboyathome/Markdown-GridTables/',
