@@ -57,13 +57,19 @@ from markdown.util import etree
 import re, string, pdb
 
 class GridTableExtension(markdown.Extension):
-    def extendMarkdown(self, md, md_globals):
-        md.parser.blockprocessors.add('grid-table',
-                                      GridTableProcessor(md.parser),
-                                      '<hashheader')
+    def __init__(self, **kwargs):
+        super(GridTableExtension, self).__init__(**kwargs)
+        self.config = {}
 
-def makeExtension(*args, **kwargs):
-    return GridTableExtension(*args, **kwargs)
+    def extendMarkdown(self, md):
+        md.registerExtension(self)
+        md.parser.blockprocessors.register(
+            GridTableProcessor(md.parser), 'grid_tables', 106)
+
+
+def makeExtension(**kwargs):
+    return GridTableExtension(**kwargs)
+
 
 class GridTableCell(object):
     """

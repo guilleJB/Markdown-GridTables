@@ -10,6 +10,11 @@ setup(
     url='https://github.com/smartboyathome/Markdown-GridTables/',
     py_modules=['mdx_grid_tables'],
     install_requires=['Markdown>=2.0',],
+    entry_points={
+        'markdown.extensions': [
+            'grid_tables = mdx_grid_tables:GridTableExtension',
+        ],
+    },
     classifiers=[
         'Development Status :: 4 - Beta',
         'Operating System :: OS Independent',
