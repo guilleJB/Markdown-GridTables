@@ -53,7 +53,7 @@ http://docutils.svn.sourceforge.net/viewvc/docutils/trunk/docutils/docutils/pars
 """
 
 import markdown
-from markdown.util import etree
+import xml.etree.ElementTree as etree
 import re, string, pdb
 
 class GridTableExtension(markdown.Extension):
